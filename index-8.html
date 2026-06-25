@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief de votre site — Mélissa Paultre · SteFi Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --plum:#5b4b6e;--plum-d:#43374f;--rose:#c98a8a;--gold:#c9a86a;
+  --cream:#f7f2ec;--cream-2:#efe6da;--ink:#3a3340;--muted:#8a7f8e;--border:#e3d7c9;
+  --radius:16px;
+}
+body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;padding-bottom:50px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.12;font-weight:600}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.top{background:linear-gradient(150deg,var(--plum),var(--plum-d));color:var(--cream);padding:54px 0 60px;text-align:center;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 75% 10%,rgba(201,168,106,.25),transparent 60%);pointer-events:none}
+.top .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.34em;font-size:.68rem;font-weight:600;color:var(--gold);margin-bottom:16px}
+.top h1{font-size:clamp(2.1rem,5.5vw,3rem);margin-bottom:14px}
+.top h1 em{font-style:italic;color:var(--gold)}
+.top p{color:#e8ddd0;max-width:540px;margin:0 auto;font-size:1.05rem}
+.salut{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--gold);margin-bottom:8px}
+
+/* Intro */
+.intro{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;margin-top:-34px;position:relative;z-index:3;box-shadow:0 20px 50px -28px rgba(67,55,79,.5)}
+.intro p{color:var(--muted);font-size:1rem}
+.intro p b{color:var(--ink)}
+
+/* Sections */
+.sec{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px;margin-top:22px;box-shadow:0 8px 28px -22px rgba(67,55,79,.4)}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sec-head .n{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--rose));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;flex:0 0 auto}
+.sec-head h2{font-size:1.5rem;color:var(--plum-d)}
+.q{margin-bottom:22px}
+.q:last-child{margin-bottom:0}
+.q label.main{display:block;font-weight:600;font-size:1rem;margin-bottom:5px;color:var(--ink)}
+.q .hint{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{
+  width:100%;padding:13px 15px;border:1.5px solid var(--border);border-radius:11px;font-family:inherit;font-size:.96rem;background:var(--cream);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,138,138,.16)}
+textarea{resize:vertical;min-height:90px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;align-items:center;gap:11px;padding:12px 15px;border:1.5px solid var(--border);border-radius:11px;cursor:pointer;transition:all .18s;background:var(--cream)}
+.opt:hover{border-color:var(--rose)}
+.opt input{width:18px;height:18px;accent-color:var(--plum);flex:0 0 auto;cursor:pointer}
+.opt span{font-size:.95rem}
+.opt.sel{border-color:var(--plum);background:rgba(91,75,110,.06)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;align-items:center;gap:9px;padding:10px 14px;border:1.5px solid var(--border);border-radius:30px;cursor:pointer;font-size:.9rem;transition:all .18s;background:var(--cream)}
+.sw:hover{border-color:var(--rose)}
+.sw.sel{border-color:var(--plum);background:rgba(91,75,110,.07)}
+.sw .dot{width:18px;height:18px;border-radius:50%;flex:0 0 auto;border:1px solid rgba(0,0,0,.1)}
+
+/* Submit */
+.submit-zone{text-align:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:11px;background:#25d366;color:#fff;border:0;padding:17px 38px;border-radius:32px;font-family:inherit;font-size:1.05rem;font-weight:600;cursor:pointer;box-shadow:0 16px 36px -14px rgba(37,211,102,.6);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:24px;height:24px}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+.footer{text-align:center;margin-top:34px;color:var(--muted);font-size:.85rem}
+.footer b{color:var(--plum-d)}
+.req{color:var(--rose)}
+
+@media (max-width:600px){
+  .grid2{grid-template-columns:1fr}
+  .sec,.intro{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="eyebrow">SteFi Services · Création de site web</div>
+    <div class="salut">Bonjour Mélissa,</div>
+    <h1>Parlons de <em>votre site</em></h1>
+    <p>Quelques questions pour créer un site qui vous ressemble et qui parle à vos clients. Prenez le temps, il n'y a pas de mauvaise réponse.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="intro">
+    <p><b>Comment ça marche :</b> répondez aux questions ci-dessous (la plupart sont rapides). À la fin, cliquez sur le bouton vert : vos réponses me seront envoyées directement. C'est tout !</p>
+  </div>
+
+  <form id="briefForm" action="https://formspree.io/f/xbdblyqw" method="POST">
+    <input type="hidden" name="_subject" value="Brief site — Makaya Method (Mélissa Paultre)">
+  <!-- 1. Vous & votre activité -->
+  <div class="sec">
+    <div class="sec-head"><span class="n">1</span><h2>Vous &amp; votre activité</h2></div>
+
+    <div class="q">
+      <label class="main">Votre nom complet <span class="req">*</span></label>
+      <input type="text" id="nom" name="Nom" placeholder="Mélissa Paultre" value="Mélissa Paultre">
+    </div>
+    <div class="q">
+      <label class="main">Comment décririez-vous votre activité en une phrase ?</label>
+      <div class="hint">Ex. « J'accompagne les femmes vers la confiance en soi par le coaching. »</div>
+      <textarea id="activite" name="Activite" placeholder="Votre activité, en vos mots…"></textarea>
+    </div>
+    <div class="q">
+      <label class="main">Vos services de coaching</label>
+      <div class="hint">Cochez ce que vous proposez (plusieurs choix possibles).</div>
+      <div class="opts" data-multi>
+        <label class="opt"><input type="checkbox" name="Services" value="Coaching individuel"><span>Coaching individuel</span></label>
+        <label class="opt"><input type="checkbox" name="Services" value="Coaching de groupe"><span>Coaching de groupe</span></label>
+        <label class="opt"><input type="checkbox" name="Services" value="Ateliers / séminaires"><span>Ateliers &amp; séminaires</span></label>
+        <label class="opt"><input type="checkbox" name="Services" value="Conférences"><span>Conférences</span></label>
+        <label class="opt"><input type="checkbox" name="Services" value="Programmes en ligne"><span>Programmes / formations en ligne</span></label>
+        <label class="opt"><input type="checkbox" name="Services" value="Accompagnement entreprises"><span>Accompagnement en entreprise</span></label>
+      </div>
+    </div>
+    <div class="q">
+      <label class="main">À qui s'adressent vos services ?</label>
+      <div class="hint">Votre clientèle idéale (ex. jeunes professionnels, femmes, dirigeants…).</div>
+      <input type="text" id="public" name="Public_cible" placeholder="Votre public cible">
+    </div>
+  </div>
+
+  <!-- 2. L'ambiance & le style -->
+  <div class="sec">
+    <div class="sec-head"><span class="n">2</span><h2>L'ambiance &amp; le style</h2></div>
+
+    <div class="q">
+      <label class="main">Quelle ambiance souhaitez-vous transmettre ?</label>
+      <div class="hint">Choisissez celle qui vous parle le plus.</div>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="ambiance" value="Douce et apaisante"><span>🌿 Douce &amp; apaisante (sérénité, bien-être)</span></label>
+        <label class="opt"><input type="radio" name="ambiance" value="Élégante et raffinée"><span>✨ Élégante &amp; raffinée (luxe discret)</span></label>
+        <label class="opt"><input type="radio" name="ambiance" value="Énergique et motivante"><span>🔥 Énergique &amp; motivante (dynamisme)</span></label>
+        <label class="opt"><input type="radio" name="ambiance" value="Chaleureuse et proche"><span>🤍 Chaleureuse &amp; proche (humaine, accessible)</span></label>
+        <label class="opt"><input type="radio" name="ambiance" value="Moderne et épurée"><span>⚪ Moderne &amp; épurée (minimaliste)</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="main">Quelles couleurs vous attirent ?</label>
+      <div class="hint">Cochez vos préférées (plusieurs choix possibles).</div>
+      <div class="swatches" data-multi>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Violet / prune" hidden><span class="dot" style="background:#5b4b6e"></span>Prune</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Rose poudré" hidden><span class="dot" style="background:#c98a8a"></span>Rose poudré</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Doré / beige" hidden><span class="dot" style="background:#c9a86a"></span>Doré</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Vert sauge" hidden><span class="dot" style="background:#8a9b7e"></span>Vert sauge</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Bleu nuit" hidden><span class="dot" style="background:#2f3b52"></span>Bleu nuit</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Terracotta" hidden><span class="dot" style="background:#bd6a52"></span>Terracotta</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Noir & blanc" hidden><span class="dot" style="background:#2b2b2b"></span>Noir &amp; blanc</label>
+        <label class="sw"><input type="checkbox" name="Couleurs" value="Tons neutres" hidden><span class="dot" style="background:#cfc3b4"></span>Neutres</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="main">Avez-vous des sites que vous aimez ?</label>
+      <div class="hint">Collez 1 à 3 liens de sites dont le style vous plaît (facultatif).</div>
+      <textarea id="inspirations" name="Inspirations" placeholder="Liens de sites que vous trouvez beaux…"></textarea>
+    </div>
+  </div>
+
+  <!-- 3. Le contenu -->
+  <div class="sec">
+    <div class="sec-head"><span class="n">3</span><h2>Le contenu du site</h2></div>
+
+    <div class="q">
+      <label class="main">Quelles pages souhaitez-vous ?</label>
+      <div class="hint">Cochez ce dont vous avez besoin.</div>
+      <div class="opts" data-multi>
+        <label class="opt"><input type="checkbox" name="Pages" value="Accueil"><span>Accueil</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="À propos / Mon parcours"><span>À propos / Mon parcours</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Services / Coaching"><span>Mes services de coaching</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Témoignages"><span>Témoignages clients</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Blog / Articles"><span>Blog / articles</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Prise de rendez-vous"><span>Prise de rendez-vous</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Contact"><span>Contact</span></label>
+        <label class="opt"><input type="checkbox" name="Pages" value="Boutique / Programmes"><span>Boutique / programmes payants</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="main">Le formulaire dynamique : que doivent pouvoir faire vos visiteurs ?</label>
+      <div class="hint">C'est la partie « dynamique » de votre site.</div>
+      <div class="opts" data-multi>
+        <label class="opt"><input type="checkbox" name="Besoins_formulaire" value="Demander une séance de coaching"><span>Demander une séance de coaching</span></label>
+        <label class="opt"><input type="checkbox" name="Besoins_formulaire" value="Remplir un questionnaire avant séance"><span>Remplir un questionnaire avant la première séance</span></label>
+        <label class="opt"><input type="checkbox" name="Besoins_formulaire" value="S'inscrire à un programme/atelier"><span>S'inscrire à un programme ou atelier</span></label>
+        <label class="opt"><input type="checkbox" name="Besoins_formulaire" value="S'abonner à une newsletter"><span>S'abonner à une newsletter</span></label>
+        <label class="opt"><input type="checkbox" name="Besoins_formulaire" value="Me contacter simplement"><span>Me contacter simplement</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label class="main">Souhaitez-vous gérer vous-même les demandes reçues ?</label>
+      <div class="hint">Un espace privé pour voir et gérer les demandes (comme un tableau de bord).</div>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="admin" value="Oui, un espace admin"><span>Oui, je veux un espace privé pour gérer</span></label>
+        <label class="opt"><input type="radio" name="admin" value="Non, juste recevoir par WhatsApp/email"><span>Non, recevoir les demandes par WhatsApp/email suffit</span></label>
+        <label class="opt"><input type="radio" name="admin" value="À conseiller"><span>Je ne sais pas, conseillez-moi</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Identité visuelle & pratique -->
+  <div class="sec">
+    <div class="sec-head"><span class="n">4</span><h2>Logo, photos &amp; pratique</h2></div>
+
+    <div class="q">
+      <label class="main">Avez-vous déjà un logo ?</label>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="logo" value="Oui, j'ai un logo"><span>Oui, j'ai déjà un logo</span></label>
+        <label class="opt"><input type="radio" name="logo" value="Non, à créer"><span>Non, j'aimerais en créer un</span></label>
+      </div>
+    </div>
+    <div class="q">
+      <label class="main">Avez-vous des photos professionnelles de vous ?</label>
+      <div class="hint">Pour un site de coaching, votre image inspire confiance.</div>
+      <div class="opts" data-single>
+        <label class="opt"><input type="radio" name="photos" value="Oui, j'ai des photos"><span>Oui, j'ai de belles photos</span></label>
+        <label class="opt"><input type="radio" name="photos" value="Non, pas encore"><span>Non, pas encore</span></label>
+      </div>
+    </div>
+    <div class="q">
+      <label class="main">Une phrase, une citation ou un mot qui vous représente ?</label>
+      <div class="hint">Ça m'aide à capter votre essence (facultatif).</div>
+      <input type="text" id="citation" name="Devise" placeholder="Votre devise, votre énergie…">
+    </div>
+    <div class="grid2">
+      <div class="q">
+        <label class="main">Email</label>
+        <input type="email" id="email" name="Email" placeholder="votre@email.com">
+      </div>
+      <div class="q">
+        <label class="main">Téléphone / WhatsApp</label>
+        <input type="tel" id="tel" name="Telephone" placeholder="+509 …">
+      </div>
+    </div>
+    <div class="q">
+      <label class="main">Réseaux sociaux à relier au site</label>
+      <input type="text" id="reseaux" name="Reseaux" placeholder="Facebook, Instagram, TikTok…">
+    </div>
+    <div class="q">
+      <label class="main">Autre chose à me dire ?</label>
+      <textarea id="autre" name="Autre" placeholder="Vos idées, vos envies, vos questions…"></textarea>
+    </div>
+  </div>
+
+  <div class="submit-zone">
+    <button class="btn" type="submit" id="send">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.3 31.6l8-2.1c2.3 1.2 4.9 1.9 7.7 1.9 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.2c-2.5 0-4.8-.7-6.8-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2-2-4.4-2-6.8C3.2 9 9 3.2 16 3.2S28.8 9 28.8 16 23 28.6 16 28.6zm7.1-9.6c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.4 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
+      Envoyer mes réponses
+    </button>
+    <p class="note">Vos réponses seront envoyées directement à Stevenson.</p>
+  </div>
+
+  </form>
+
+  <div class="footer">
+    Formulaire conçu par <b>SteFi Services</b> · Stevenson Mervil
+  </div>
+</div>
+
+<script>
+// Sélection visuelle (opt / swatch)
+document.querySelectorAll(".opt input, .sw input").forEach(inp => {
+  inp.addEventListener("change", () => {
+    const wrap = inp.closest("[data-single]");
+    if (wrap && inp.type === "radio") {
+      wrap.querySelectorAll(".opt").forEach(o => o.classList.remove("sel"));
+    }
+    const box = inp.closest(".opt, .sw");
+    if (inp.type === "radio") { box.classList.add("sel"); }
+    else { box.classList.toggle("sel", inp.checked); }
+  });
+});
+
+// Envoi via Formspree (sans quitter la page) + message de confirmation
+const form = document.getElementById("briefForm");
+const btn = document.getElementById("send");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  const original = btn.innerHTML;
+  btn.innerHTML = "Envoi en cours…";
+  try {
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+    if (res.ok) {
+      form.style.display = "none";
+      const ok = document.createElement("div");
+      ok.style.cssText = "background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px 30px;text-align:center;box-shadow:0 14px 40px -24px rgba(67,55,79,.5);margin-top:10px";
+      ok.innerHTML = '<div style="font-size:2.6rem;margin-bottom:12px">\u2713</div>' +
+        '<h2 style="font-family:\'Cormorant Garamond\',serif;color:var(--plum-d);font-size:1.8rem;margin-bottom:10px">Merci Mélissa !</h2>' +
+        '<p style="color:var(--muted)">Vos réponses ont bien été envoyées à Stevenson. Il vous recontactera très vite pour la suite. \u2728</p>';
+      form.parentNode.insertBefore(ok, form);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      throw new Error("Formspree error");
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.innerHTML = original;
+    alert("Une erreur est survenue. Vérifiez votre connexion et réessayez, ou contactez Stevenson directement.");
+  }
+});
+</script>
+</body>
+</html>
